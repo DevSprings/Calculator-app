@@ -1,0 +1,273 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: my-font;
+    src: url(./font/LeagueSpartan-VariableFont_wght.ttf);
+}
+
+body {
+    block-size: 100vh;
+    display: flex;
+    gap: 0px;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--bg-clr);
+    font-family: my-font;
+    margin: 0px;
+
+}
+
+.theme1 {
+    --bg-clr: hsl(222, 26%, 31%);
+    --dsp-bg-clr: hsl(224, 36%, 15%);
+    --txt-clr: hsl(221, 14%, 31%);
+    --wht-txt-clr: hsl(0, 0%, 100%);
+    --kar-bg-clr: hsl(223, 31%, 20%);
+    --tgl-bt-clr: hsl(6, 63%, 50%);
+    --tgl-bt-hov: hsl(6, 63%, 61%);
+
+    --wrd-bg-clr: hsl(225, 21%, 49%);
+    --wrd-bg-hov: hsl(225, 21%, 60%);
+    --wrd-txt-clr: var(--wht-txt-clr);
+    --wrd-box-shadow: 0px 4.5px hsl(224, 28%, 35%);
+
+    --equal-bt-bg-clr: var(--tgl-bt-clr);
+    --equal-bt-txt-clr: hsl(0, 0%, 100%);
+    --equal-bt-box-shadow: 0px 4.5px hsl(6, 70%, 34%);
+
+    --bt-bg-clr: hsl(30, 25%, 89%);
+    --bt-bg-hov: hsl(30, 25%, 100%);
+    --bt-box-shadow: 0px 4.5px hsl(28, 16%, 65%);
+
+}
+
+.theme2 {
+    --bg-clr: hsl(0, 0%, 90%);
+    --dsp-bg-clr: hsl(0, 0%, 93%);
+    --txt-clr: hsl(60, 10%, 19%);
+    --wht-txt-clr: hsl(0, 0%, 100%);
+    --kar-bg-clr: hsl(0, 5%, 81%);
+    --tgl-bt-clr: hsl(25, 98%, 40%);
+    --tgl-bt-hov: hsl(25, 98%, 51%);
+
+    --wrd-bg-clr: hsl(185, 42%, 37%);
+    --wrd-bg-hov: hsl(185, 42%, 48%);
+    --wrd-txt-clr: var(--wht-txt-clr);
+    --wrd-box-shadow: 0px 4.5px hsl(185, 58%, 25%);
+    ;
+
+    --equal-bt-bg-clr: var(--tgl-bt-clr);
+    --equal-bt-txt-clr: var(--wht-txt-clr);
+    --equal-bt-box-shadow: 0px 4.5px hsl(25, 99%, 27%);
+
+    --bt-bg-clr: hsl(45, 7%, 89%);
+    --bt-bg-hov: hsl(45, 7%, 100%);
+    --bt-box-shadow: 0px 4.5px hsl(35, 11%, 61%);
+}
+
+.theme3 {
+    --bg-clr: hsl(268, 75%, 9%);
+    --dsp-bg-clr: hsl(268, 71%, 12%);
+    --txt-clr: hsl(52, 100%, 62%);
+    --wht-txt-clr: hsl(0, 0%, 100%);
+    --kar-bg-clr: var(--dsp-bg-clr);
+    --tgl-bt-clr: hsl(176, 100%, 44%);
+    --tgl-bt-hov: hsl(176, 100%, 55%);
+
+    --wrd-bg-clr: hsl(281, 89%, 26%);
+    --wrd-bg-hov: hsl(281, 89%, 37%);
+    --wrd-txt-clr: var(--wht-txt-clr);
+    --wrd-box-shadow: 0px 4.5px hsl(285, 91%, 52%);
+    ;
+
+    --equal-bt-bg-clr: var(--tgl-bt-clr);
+    --equal-bt-txt-clr: hsl(198, 20%, 13%);
+    --equal-bt-box-shadow: 0px 4.5px hsl(177, 92%, 70%);
+
+    --bt-bg-clr: hsl(268, 47%, 21%);
+    --bt-bg-hov: hsl(268, 47%, 32%);
+    --bt-box-shadow: 0px 4.5px hsl(290, 70%, 36%);
+}
+
+h1 {
+    font-size: clamp(1.75rem, 4vw + 1.5rem, 2.75rem);
+    padding: 0px;
+    margin: 0px;
+}
+
+.container {
+    max-inline-size: 720px;
+    inline-size: 100%;
+    padding: 4%;
+    font-family: my-font;
+
+    @media (width > 600px) {
+        margin-inline: auto;
+    }
+
+}
+
+#displayArea {
+    padding: 5%;
+    inline-size: 100%;
+    margin: 0;
+    background-color: var(--dsp-bg-clr);
+    border-radius: 10px;
+    border: 0px;
+    text-align: end;
+    outline: none;
+    pointer-events: none;
+    color: var(--wht-txt-clr);
+    font-family: my-font;
+    font-size: clamp(2.75rem, 3vw + 2rem, 3.5rem);
+    font-weight: 600;
+}
+
+.keyArea {
+    display: grid;
+    gap: 5%;
+    background-color: var(--kar-bg-clr);
+    grid-template-areas:
+        'seven eight nine divide'
+        'four five six multiply'
+        'one two three minus'
+        'dot zero del plus'
+        'reset reset equal equal';
+    padding: 6%;
+    margin-block-start: 1.5rem;
+    block-size: 28rem;
+    border-radius: 10px;
+
+    @media (width > 600px) {
+        block-size: 32rem;
+    }
+}
+
+button:nth-child(17) {
+    grid-area: reset;
+}
+
+button:nth-child(18) {
+    grid-area: equal;
+}
+
+
+.topArea {
+    display: grid;
+    gap: 0;
+    padding: 0;
+    color: var(--wht-txt-clr);
+}
+
+button {
+    background-color: var(--bt-bg-clr);
+    border: 0px;
+    color: var(--txt-clr);
+    font-size: clamp(1.5rem, 3vw + 1rem, 2.5rem);
+    font-weight: 700;
+    cursor: pointer;
+    border-radius: 7px;
+    box-shadow: var(--bt-box-shadow);
+    font-family: my-font;
+
+
+    @media (width > 600px) {
+        padding: 10px;
+        margin-block: 2px;
+    }
+
+}
+
+button:active {
+    transform: scale(0.75);
+}
+
+button:hover {
+    background-color: var(--bt-bg-hov);
+}
+
+.operator {
+    font-size: clamp(.75rem, 4vw + 0.5rem, 2.3rem);
+}
+
+#word-text {
+    color: var(--wrd-txt-clr);
+    font-size: clamp(0.5rem, 3vw + 0.25rem, 1.5rem);
+    background-color: var(--wrd-bg-clr);
+    box-shadow: var(--wrd-box-shadow);
+
+}
+
+#word-text:hover {
+    background-color: var(--wrd-bg-hov);
+}
+
+.equal {
+    background-color: var(--equal-bt-bg-clr);
+    color: var(--equal-bt-txt-clr);
+    box-shadow: var(--equal-bt-box-shadow);
+
+}
+
+.equal:hover {
+    background-color: var(--tgl-bt-hov);
+}
+
+.up {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-block-end: 9%;
+}
+
+.themeToggle {
+    display: flex;
+    gap: 20px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    font-weight: 500;
+}
+
+.toggleArea {
+    display: grid;
+}
+
+.toggleBackground {
+    display: flex;
+    align-items: center;
+    background-color: var(--kar-bg-clr);
+    border-radius: 50px;
+    inline-size: 75px;
+    block-size: 28px;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.toggleButton {
+    position: relative;
+    background-color: var(--tgl-bt-clr);
+    inline-size: 20px;
+    block-size: 20px;
+    border-radius: 50%;
+    margin-inline-start: 5px;
+    cursor: pointer;
+    transition: 0.25s ease-in;
+}
+
+.toggleButton:hover {
+    background-color: var(--tgl-bt-hov);
+}
+
+.numbering {
+    font-weight: 500;
+    padding: 0px;
+    margin: 0px;
+    text-align: end;
+    letter-spacing: 15px;
+    margin-inline-end: -4.5px;
+}
